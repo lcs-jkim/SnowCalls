@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+// UITextViewDelegate - means we "promise" to  implement certain methods on this class, or, also, can mean some funcionality is now made avaliable to us
+class ViewController: UIViewController, UITextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +27,10 @@ class ViewController: UIViewController {
         AnswerBox.text = ""
         ErrorMessage.text = ""
         
-        guard let PhonenumberInput = Phonenumber.text, PhonenumberInput.count > 0 else {
-            ErrorMessage.text = "Please enter a phone number to convert"
+        guard let PhonenumberInput = Phonenumber.text, PhonenumberInput.count > 0, PhonenumberInput.count < 225 else {
+            ErrorMessage.text = "Please enter a valid phone number to convert"
             return
             
-            guard let PhonenumberInput = Phonenumber.text, PhonenumberInput.count < 225 else {
-                ErrorMessage.text = "Please enter a phone number that is less than 225 characters"
-            }
-            
-            
-    
         }
         
     }
