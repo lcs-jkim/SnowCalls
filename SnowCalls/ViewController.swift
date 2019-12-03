@@ -10,28 +10,18 @@ import UIKit
 
 // UITextViewDelegate - means we "promise" to  implement certain methods on this class, or, also, can mean some funcionality is now made avaliable to us
 class ViewController: UIViewController, UITextViewDelegate {
+    
+    //MARK PROPERTIES
+   
+       @IBOutlet weak var ErrorMessage: UILabel!
+       @IBOutlet weak var AnswerBox: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    //MARK PROPERTIES
-    @IBOutlet weak var Phonenumber: UITextField!
-    @IBOutlet weak var ErrorMessage: UILabel!
-    @IBOutlet weak var AnswerBox: UILabel!
     
     @IBAction func Convert(_ sender: Any) {
-        
-        // Clear the answer and error labels
-        AnswerBox.text = ""
-        ErrorMessage.text = ""
-        
-        guard let PhonenumberInput = Phonenumber.text, PhonenumberInput.count > 0, PhonenumberInput.count < 225 else {
-            ErrorMessage.text = "Please enter a valid phone number to convert"
-            return
-            
-        }
         
     }
     
