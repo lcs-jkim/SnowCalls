@@ -29,6 +29,13 @@ class ViewController: UIViewController {
         guard let PhonenumberInput = Phonenumber.text, PhonenumberInput.count > 0 else {
             ErrorMessage.text = "Please enter a phone number to convert"
             return
+            
+            guard let PhonenumberInput = Phonenumber.text, PhonenumberInput.count < 225 else {
+                ErrorMessage.text = "Please enter a phone number that is less than 225 characters"
+            }
+            
+            
+    
         }
         
     }
