@@ -15,6 +15,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    //MARK PROPERTIES
+    @IBOutlet weak var Phonenumber: UITextField!
+    @IBOutlet weak var ErrorMessage: UILabel!
+    @IBOutlet weak var AnswerBox: UILabel!
+    
+    @IBAction func Convert(_ sender: Any) {
+        
+        // Clear the answer and error labels
+        AnswerBox.text = ""
+        ErrorMessage.text = ""
+        
+        guard let PhonenumberInput = Phonenumber.text, PhonenumberInput.count > 0 else {
+            ErrorMessage.text = "Please enter a phone number to convert"
+            return
+        }
+        
+    }
+    
 }
 
