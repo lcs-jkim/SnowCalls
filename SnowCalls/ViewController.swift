@@ -27,6 +27,14 @@ class ViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func Convert(_ sender: Any) {
         
+        // Guard against no input or an input more than 225 characters
+        guard let PhoneNumberInputBox = PhoneNumberInput.text, PhoneNumberInputBox.count > 0, PhoneNumberInputBox.count < 225 else {
+            ErrorMessage.text = ("Please enter a valid phone number")
+            return
+        }
+        
+        
+        
     }
     
 }
