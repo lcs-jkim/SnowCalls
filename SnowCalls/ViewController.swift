@@ -12,10 +12,11 @@ import UIKit
 class ViewController: UIViewController, UITextViewDelegate {
     
     //MARK PROPERTIES
-   
-       @IBOutlet weak var ErrorMessage: UILabel!
-       @IBOutlet weak var AnswerBox: UILabel!
-       @IBOutlet weak var PhoneNumberInput: UITextField!
+
+    @IBOutlet weak var AnswerBox: UITextView!
+    @IBOutlet weak var PhoneNumberInput: UITextView!
+    @IBOutlet weak var ErrorMessage: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
