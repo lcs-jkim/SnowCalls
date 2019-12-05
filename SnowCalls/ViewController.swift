@@ -38,7 +38,23 @@ class ViewController: UIViewController, UITextViewDelegate {
             return
         }
         
-        
+        // Look at each character one by one in Input phone number
+        var outputPhoneNumber = ""
+        for character in PhoneNumberInputBox {
+            
+            switch character {
+            case "A", "B", "C":
+                outputPhoneNumber += "2"
+            case "D", "E", "F":
+                outputPhoneNumber += "3"
+            case "G", "H", "I":
+                outputPhoneNumber += "4"
+
+            default:
+                print("yeet")
+            }
+            
+        }
         
     }
     
