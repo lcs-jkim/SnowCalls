@@ -15,10 +15,14 @@ class ViewController: UIViewController, UITextViewDelegate {
    
        @IBOutlet weak var ErrorMessage: UILabel!
        @IBOutlet weak var AnswerBox: UILabel!
-
+       @IBOutlet weak var PhoneNumberInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Give the focus to the input textview when the program begins
+        PhoneNumberInput.becomeFirstResponder()
     }
     
     @IBAction func Convert(_ sender: Any) {
