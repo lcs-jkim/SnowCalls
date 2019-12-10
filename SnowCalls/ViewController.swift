@@ -45,8 +45,12 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         // Look at each character one by one in Input phone number
         var outputPhoneNumber = ""
+        var numberOfDigits = 0
         for character in PhoneNumberInputBox {
-            
+            numberOfDigits += 1
+            if numberOfDigits > 9 {
+                return
+            }
             switch character {
             case "A", "B", "C":
                 outputPhoneNumber += "2"
@@ -70,7 +74,7 @@ class ViewController: UIViewController, UITextViewDelegate {
                 outputPhoneNumber += String(character)
             }
             
-            print(outputPhoneNumber)
+            AnswerBox.text = (outputPhoneNumber)
             
         }
         
