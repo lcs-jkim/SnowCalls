@@ -11,12 +11,17 @@ import UIKit
 // UITextViewDelegate - means we "promise" to  implement certain methods on this class, or, also, can mean some funcionality is now made avaliable to us
 class ViewController: UIViewController, UITextViewDelegate {
     
-    //MARK PROPERTIES
+    //MARK: properties and outlets
 
     @IBOutlet weak var AnswerBox: UITextView!
     @IBOutlet weak var PhoneNumberInput: UITextView!
     @IBOutlet weak var ErrorMessage: UILabel!
     
+    // Give the focus to the input textview when the program begins
+    
+    
+    // Make this class (the view controller) be the delegate for the input text view.
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +38,7 @@ class ViewController: UIViewController, UITextViewDelegate {
         AnswerBox.text = ""
         
         // Guard against no input or an input more than 225 characters
-        guard let PhoneNumberInputBox = PhoneNumberInput.text, PhoneNumberInputBox.count > 0, PhoneNumberInputBox.count < 225 else {
+        guard let PhoneNumberInputBox = PhoneNumberInput.text, PhoneNumberInputBox.count > 9, PhoneNumberInputBox.count < 225 else {
             ErrorMessage.text = ("Please enter a valid phone number")
             return
         }
@@ -49,10 +54,23 @@ class ViewController: UIViewController, UITextViewDelegate {
                 outputPhoneNumber += "3"
             case "G", "H", "I":
                 outputPhoneNumber += "4"
-
+            case "J", "K", "L":
+                outputPhoneNumber += "5"
+            case "M", "N", "O":
+                outputPhoneNumber += "6"
+            case "P", "Q", "R":
+                outputPhoneNumber += "7"
+            case "S", "T", "U":
+                outputPhoneNumber += "8"
+            case "V", "W", "X":
+                outputPhoneNumber += "9"
+            case "Y", "Z":
+                outputPhoneNumber += "0"
             default:
-                print("yeet")
+                outputPhoneNumber += String(character)
             }
+            
+            print(outputPhoneNumber)
             
         }
         
